@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+  <title>Modules &rsaquo; DataTables &mdash; Stisla</title>
+
+  <!-- General CSS Files -->
+  <link rel="stylesheet" href="assets/modules/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/modules/fontawesome/css/all.min.css">
+
+  <!-- CSS Libraries -->
+  <link rel="stylesheet" href="assets/modules/datatables/datatables.min.css">
+  <link rel="stylesheet" href="assets/modules/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="assets/modules/datatables/Select-1.2.4/css/select.bootstrap4.min.css">
+
+  <!-- Template CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+<!-- Start GA -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-94034622-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-94034622-3');
+</script>
+<!-- /END GA --></head>
+
+<body>
+  <div id="app">
+    <div class="main-wrapper main-wrapper-1">
+      <div class="navbar-bg"></div>
+      <nav class="navbar navbar-expand-lg main-navbar">
+        <form class="form-inline mr-auto">
+          <ul class="navbar-nav mr-3">
+            <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a></li>
+            <li><a href="#" data-toggle="search" class="nav-link nav-link-lg d-sm-none"><i class="fas fa-search"></i></a></li>
+          </ul>
+        </form>
+        <ul class="navbar-nav navbar-right">
+          <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+            <img alt="image" src="assets/img/avatar/avatar-1.png" class="rounded-circle mr-1">
+            <div class="d-sm-none d-lg-inline-block">Hi, Ujang Maman</div></a>
+            <div class="dropdown-menu dropdown-menu-right">
+              <div class="dropdown-title">Logged in 5 min ago</div>
+              <a href="features-profile.html" class="dropdown-item has-icon">
+                <i class="far fa-user"></i> Profile
+              </a>
+              <div class="dropdown-divider"></div>
+              <a href="#" class="dropdown-item has-icon text-danger">
+                <i class="fas fa-sign-out-alt"></i> Logout
+              </a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+      <div class="main-sidebar sidebar-style-2">
+        <aside id="sidebar-wrapper">
+          <div class="sidebar-brand">
+            <a href="#">Figo Foods</a>
+          </div>
+          <div class="sidebar-brand sidebar-brand-sm">
+            <a href="#">FF</a>
+          </div>
+          <ul class="sidebar-menu">
+            <li class="menu-header">Dashboard</li>
+            <li class="dropdown">
+              <a href="index.html" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a>
+            </li>
+            <li class="menu-header">Welcome</li>
+            <li class="dropdown">
+              <a href="welcome.html" class="nav-link"><i class="fas fa-door-open"></i> <span>Welcome</span></a>
+            </li>
+            <li class="menu-header">Why Choose Us</li>
+            <li class="dropdown">
+              <a href="choose.html" class="nav-link"><i class="fas fa-thumbtack"></i> <span>Why Choose Us</span></a>
+            </li>
+            <li class="menu-header">History</li>
+            <li class="dropdown">
+              <a href="history.html" class="nav-link"><i class="fas fa-history"></i> <span>History</span></a>
+            </li>
+            <li class="menu-header">Latest News</li>
+            <li class="dropdown active">
+              <a href="news.html" class="nav-link"><i class="fas fa-newspaper"></i> <span>Latest News</span></a>
+            </li>
+            <li class="menu-header">Footer</li>
+            <li class="dropdown">
+              <a href="footer.html" class="nav-link"><i class="fas fa-th-large"></i> <span>Footer</span></a>
+            </li>
+          </ul>
+
+          
+        </aside>
+      </div>
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <section class="section">
+          <div class="section-header">
+            <div class="section-header-breadcrumb justify-content-start">
+              <div class="breadcrumb-item"><a href="#">Dashboard</a></div>
+              <div class="breadcrumb-item">News</div>
+            </div>
+          </div>
+
+          <div class="section-body">
+            <h2 class="section-title">News</h2>
+            <div class="row">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table class="table table-striped" id="table-1">
+                        <thead class="text-center">                                 
+                          <tr>
+                            <th>
+                              #
+                            </th>
+                            <th>Image</th>
+                            <th>Title</th>
+                            <th>Description</th>
+                            <th>Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>                                 
+                          <tr>
+                            <td>
+                              1
+                            </td>
+                            <td>
+                                <img alt="image" src="assets/img/avatar/avatar-5.png" class="rounded-circle" width="35" data-toggle="tooltip" title="Wildan Ahdian">
+                            </td>
+                            <td class="align-middle">
+                              <p>Anda meme sekali</p>
+                            </td>
+                            <td>
+                                <p class="text">Lorem ipsum dolor sit amet. Asadsasda sass</p>
+                            </td>
+                            <td class="text-center">
+                              <button class="btn btn-primary">Detail</button>
+                              <button class="btn btn-danger">Delete</button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <footer class="main-footer">
+        <div class="footer-left">
+          Copyright &copy; 2020 <div class="bullet"></div> Design By <a href="https://nauval.in/">Muhamad Nauval Azhar</a>
+        </div>
+        <div class="footer-right">
+          
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- General JS Scripts -->
+  <script src="assets/modules/jquery.min.js"></script>
+  <script src="assets/modules/popper.js"></script>
+  <script src="assets/modules/tooltip.js"></script>
+  <script src="assets/modules/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/modules/nicescroll/jquery.nicescroll.min.js"></script>
+  <script src="assets/modules/moment.min.js"></script>
+  <script src="assets/js/stisla.js"></script>
+  
+  <!-- JS Libraies -->
+  <script src="assets/modules/datatables/datatables.min.js"></script>
+  <script src="assets/modules/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js"></script>
+  <script src="assets/modules/datatables/Select-1.2.4/js/dataTables.select.min.js"></script>
+  <script src="assets/modules/jquery-ui/jquery-ui.min.js"></script>
+
+  <!-- Page Specific JS File -->
+  <script src="assets/js/page/modules-datatables.js"></script>
+  
+  <!-- Template JS File -->
+  <script src="assets/js/scripts.js"></script>
+  <script src="assets/js/custom.js"></script>
+</body>
+</html>
