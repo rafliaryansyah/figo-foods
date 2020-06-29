@@ -29,7 +29,7 @@
         </li>
         <li class="menu-header">Footer</li>
         <li class="dropdown">
-          <a href="footer.html" class="nav-link"><i class="fas fa-th-large"></i> <span>Footer</span></a>
+          <a href="" class="nav-link"><i class="fas fa-th-large"></i> <span>Footer</span></a>
         </li>
       </ul>
     </aside>
