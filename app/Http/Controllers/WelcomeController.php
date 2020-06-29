@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+// use App\Http\Requests\WelcomeRequest;
 use Illuminate\Http\Request;
+use App\Welcome;
 
 class WelcomeController extends Controller
 {
@@ -11,9 +13,10 @@ class WelcomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('pages.admin.welcome.index');
+        $welcomes = Welcome::all();
+        return view('pages.admin.welcome.index', compact('welcomes'));
     }
 
     /**

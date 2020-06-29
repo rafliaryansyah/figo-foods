@@ -31,24 +31,24 @@
                       </tr>
                     </thead>
                     <tbody>                                 
+                      @foreach ($welcomes as $welcome)
                       <tr>
                         <td>
-                          1
+                          {{ $loop->iteration }}
                         </td>
-                        <td>Create a mobile app</td>
+                        <td>{{ $welcome->image }}</td>
                         <td class="align-middle">
-                          <div class="progress" data-height="4" data-toggle="tooltip" title="100%">
-                            <div class="progress-bar bg-success" data-width="100%"></div>
-                          </div>
+                          {{ $welcome->title }}
                         </td>
                         <td>
-                          <img alt="image" src="assets/img/avatar/avatar-5.png" class="rounded-circle" width="35" data-toggle="tooltip" title="Wildan Ahdian">
+                          {{ $welcome->description }}
                         </td>
                         <td class="text-center">
                           <button class="btn btn-primary">Edit</button>
                           <button class="btn btn-danger">Delete</button>
                         </td>
                       </tr>
+                      @endforeach
                     </tbody>
                   </table>
                 </div>
