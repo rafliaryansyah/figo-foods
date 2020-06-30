@@ -112,6 +112,8 @@ class WelcomeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        DB::table('welcomes')->where('id', $id)->delete();
+
+        return redirect()->route('welcome.index');
     }
 }

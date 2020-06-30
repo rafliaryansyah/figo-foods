@@ -46,7 +46,11 @@
                         </td>
                         <td class="text-center">
                           <a href="{{ route('welcome.edit', $welcome->id) }}" class="btn btn-primary">Edit</a>
-                          <button class="btn btn-danger">Delete</button>
+                          <form action="{{ route('welcome.destroy', $welcome->id) }}" method="POST" class="d-inline">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-danger" type="submit">Delete</button>
+                          </form>
                         </td>
                       </tr>
                       @endforeach
