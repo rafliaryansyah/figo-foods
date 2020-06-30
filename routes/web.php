@@ -17,15 +17,20 @@ Route::get('/', 'HomeController@index')->name('home');
 
 
 
-Route::prefix('admin')
-    ->namespace('Admin')
-    ->middleware(['auth', 'admin'])
-    ->group(function() {
-        Route::get('/dashboard', 'DashboardController@index');
-        Route::resource('welcome', 'WelcomeController');
-        Route::resource('choose', 'ChooseController');
-        Route::resource('history', 'HistoryController');
-        Route::resource('news', 'NewsController');
+Route::group(['middleware' => 'auth'], function()
+{
+    Route::get('/dashboard', 'DashboardController@index');
+    Route::resource('welcome', 'WelcomeController');
+    Route::resource('choose', 'ChooseController');
+    Route::resource('history', 'HistoryController');
+    Route::resource('news', 'NewsController');
+    
 });
 
-Auth::routes(['verify' => true]);
+// Route::prefix('admin')
+//     ->namespace('Admin')
+//     ->middleware(['auth', 'admin'])
+//     ->group(function() {
+// });
+
+Auth::routes();

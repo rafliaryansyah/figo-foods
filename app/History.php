@@ -9,4 +9,7 @@ class History extends Model
     protected $fillable = [
         'image', 'title', 'description'
     ];
+
+    protected $table = 'histories';
+
 }

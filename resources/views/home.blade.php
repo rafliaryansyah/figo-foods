@@ -60,25 +60,21 @@
             <div class="jumbotron"> 
             <div class="content">
                 <div class="container">
+                    @foreach ($welcome as $result)
                     <div class="row">
                         <div class="col-md-6 col-sm-6">  
-                            <img src="{{ asset('frontend/assets/image/Chef.png') }}" alt="">
+                            <img src="{{ Storage::url($result->image) }}" alt="">
                         </div>
                         <div class="col-md-6 col-sm-6">
                              <span>Welcome</span>
-                                <h1>Welcome to Figo <br>
-                                    Restaurant </h1>
-                                <p>Quickly predominate standards compliants architectures and 
-                                    prospective internal or "organic" sources. Synergistically mesh 
-                                    quality quality vectors for one-to-one leadership.</p>
-                                <p>Quickly predominate standards compliants architectures and 
-                                    prospective internal or "organic" sources. Synergistically mesh 
-                                    quality quality vectors for one-to-one leadership.</p>
+                                <h1>{{ $result->title }}</h1>
+                                <p>{{ $result->description }}</p>
                              <button class="btn btn-success">Explore Our Story</button>
                             </div>   
                         </div>
                         </div>
                     </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -105,74 +101,50 @@
     <div class="jumbotron">
         <div class="container justify-content-center">
             <div class="row">
+                @foreach ($choose as $result)
                 <div class="col-md-4 col-sm-4">
                     <div class="card">
-                        <img src="{{ asset('frontend/assets/image/1.png') }}" class="card-img-top" alt="...">
-                        <h1>Various Menus</h1>
+                        <img src="{{ Storage::url($result->image) }}" class="card-img-top" alt="...">
+                        <h1>{{ $result->title }}</h1>
                         <div class="card-body text-center">
-                          <p class="card-text">Etiam feugiat eleifend est, odio 
-                            tempor vitaeVivamus maximus 
-                            scelerisque ipsum nec commodo.</p>
+                          <p class="card-text">{{ $result->description }}</p>
                         </div>
-                      </div>
-                    </div>     
-                    <div class="col-md-4 col-sm-4">
-                        <div class="card">
-                            <img src="{{ asset('frontend/assets/image/2.png') }}" class="card-img-top" alt="...">
-                            <h1>Pocket Friendly Delivery</h1>
-                            <div class="card-body text-center">
-                              <p class="card-text">Etiam feugiat eleifend est, odio 
-                                tempor vitaeVivamus maximus 
-                                scelerisque ipsum nec commodo.</p>
-                            </div>
-                          </div>
-                          <hr>
-                        </div>    
-                         <div class="col-md-4 col-sm-4">
-                            <div class="card">
-                                <img src="{{ asset('frontend/assets/image/3.png') }}" class="card-img-top" alt="...">
-                                <h1>Best Offers</h1>
-                                <div class="card-body text-center">
-                                  <p class="card-text">Etiam feugiat eleifend est, odio 
-                                    tempor vitaeVivamus maximus 
-                                    scelerisque ipsum nec commodo.</p>
-                                </div>
-                              </div>
-                         </div>
-                   </div>
-              </div>
-           </div>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        </div>
+    </div>
 </section>
 
 <!-- History -->
+@foreach ($history as $result)
 <div class="jumbotron"> 
     <div class="content">
         <div class="container">
             <div class="row">
                 <div class="col-md">
                      <span>History of Figo</span>
-                        <h1>We Cook Tradition &
-                            <br>
-                            Family Recipes </h1>
-                        <p>Quickly predominate standards compliants architectures and 
-                            prospective internal or "organic" sources. Synergistically mesh 
-                            quality quality vectors for one-to-one leadership.</p>
-                        <p>Quickly predominate standards compliants architectures and 
-                            prospective internal or "organic" sources. </p>
+                        <h1>{{ $result->title }}</h1>
+                        <p>{{ $result->description }}</p>
+                        {{-- <h1>adsasd</h1>
+                        <p>asdasd</p> --}}
                      <button class="btn btn-success figo">Explore Our Story</button>
-                    </div>   
-                    <div class="row">
-                        <div class="col-md">
+                </div>   
+                <div class="row">
+                    <div class="col-md">
                         <div class="gmbr">
-                            <img src="{{ asset('frontend/assets/image/Image.png') }}" alt="">
+                            <img src="{{ Storage::url($result->image) }}" alt="">
+                            {{-- <img src="asdasd.jpg" alt=""> --}}
                         </div>
-                        </div>
-                </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+@endforeach
+
 
 
 <!-- Latest News -->
@@ -182,36 +154,18 @@
         <h2>News</h2>
         <H1>Latest News</H1>
         <div class="row">
+            @foreach ($news as $new)
             <div class="col-md-4 col-sm-4 col-lg-4">
                 <div class="card" style="width: 21rem;">
-                    <img src="{{ asset('frontend/assets/image/makanan.png') }}" class="card-img-top" alt="...">
+                    <img src="{{ Storage::url($new->image) }}" class="card-img-top" alt="...">
                     <div class="card-body text-left">
-                      <p class="card-text">Quickly of predominate and standards <br>
-                        compliiants and an architectures.</p>
+                    <h6 class="card-text">{{ $new->title }}</h6>
+                      <p class="card-text">{{ $new->description }}</p>
                       <a href="#" class="card-link">Readmore</a>
                     </div>
                   </div>
             </div>
-            <div class="col-md-4 col-sm-4 col-lg-4">
-                <div class="card" style="width: 21rem;">
-                    <img src="{{ asset('frontend/assets/image/makanan2.png') }}" class="card-img-top" alt="...">
-                    <div class="card-body text-left">
-                        <p class="card-text">Quickly of predominate and standards <br>
-                            compliiants and an architectures.</p>
-                          <a href="#" class="card-link text-left">Readmore</a>
-                    </div>
-                  </div>
-            </div>
-            <div class="col-md-4 col-sm-4 col-lg-4">
-                <div class="card" style="width: 21rem;">
-                    <img src="{{ asset('frontend/assets/image/makanan3.png') }}" class="card-img-top" alt="...">
-                    <div class="card-body text-left">
-                        <p class="card-text">Quickly of predominate and standards <br>
-                            compliiants and an architectures.</p>
-                          <a href="#" class="card-link">Readmore</a>
-                    </div>
-                  </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </div>

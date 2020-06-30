@@ -38,8 +38,8 @@
                           1
                         </td>
                         <td>
-                            {{-- <img alt="image" src="assets/img/avatar/avatar-5.png" class="rounded-circle" width="35" data-toggle="tooltip" title="Wildan Ahdian"> --}}
-                            {{ $choose->image }}
+                            <img alt="image" src="{{ Storage::url($choose->image) }}" class="rounded-circle" width="35" data-toggle="tooltip" title="Wildan Ahdian">
+                            {{-- {{ $choose->image }} --}}
                         </td>
                         <td class="align-middle">
                           <p>{{ $choose->title }}</p>
