@@ -74,7 +74,8 @@ class NewsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $new = News::findOrFail($id);
+        return view('pages.admin.news.edit', compact('new'));
     }
 
     /**
@@ -86,7 +87,21 @@ class NewsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'image' => 'required',
+            'title' => 'required|max:128',
+            'description' => 'required|max:512'
+        ]);
+
+        DB::table('news')->where('id', $id)->update([
+                'image' => $request->file('image')->store(
+                    'assets/gallery', 'public'
+                ),
+                'title' => $request->title,
+                'description' => $request->description
+        ]);
+
+        return redirect()->route('news.index');
     }
 
     /**
