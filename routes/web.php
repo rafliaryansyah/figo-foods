@@ -19,4 +19,4 @@ Route::get('/dashboard', 'DashboardController@index');
 Route::resource('welcome', 'WelcomeController');
 Route::resource('choose', 'ChooseController');
 Route::resource('history', 'HistoryController');
-Route::get('/news', 'NewsController@index');
+Route::resource('news', 'NewsController');
