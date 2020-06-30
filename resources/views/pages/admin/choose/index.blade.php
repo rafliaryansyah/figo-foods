@@ -48,7 +48,7 @@
                             <p class="text">{{ $choose->description }}</p>
                         </td>
                         <td class="text-center">
-                          <button class="btn btn-primary">Detail</button>
+                          <a href="{{ route('choose.edit', $choose->id) }}" class="btn btn-primary">Edit</a>
                           <button class="btn btn-danger">Delete</button>
                         </td>
                       </tr>

@@ -74,7 +74,8 @@ class ChooseController extends Controller
      */
     public function edit($id)
     {
-        //
+        $choose = Choose::findOrFail($id);
+        return view('pages.admin.choose.edit', compact('choose'));
     }
 
     /**
@@ -86,7 +87,21 @@ class ChooseController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'image' => 'required',
+            'title' => 'required|max:128',
+            'description' => 'required|max:512'
+        ]);
+
+        DB::table('chooses')->where('id', $id)->update([
+                'image' => $request->file('image')->store(
+                    'assets/gallery', 'public'
+                ),
+                'title' => $request->title,
+                'description' => $request->description
+        ]);
+
+        return redirect()->route('choose.index');
     }
 
     /**
