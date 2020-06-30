@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\History;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class HistoryController extends Controller
@@ -13,6 +15,7 @@ class HistoryController extends Controller
      */
     public function index()
     {
+        $histories = History::all();
         return view('pages.admin.history.index');
     }
 
@@ -23,7 +26,7 @@ class HistoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.admin.history.create');
     }
 
     /**
@@ -34,7 +37,20 @@ class HistoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'title' => 'required|max:128',
+            'description' => 'required|max:512'
+        ]);
+
+        DB::table('histories')->insert([
+            'image' => $request->file('image')->store(
+                'assets/gallery', 'public'
+            ),
+            'title' => $request->title,
+            'description' => $request->description
+        ]);
+
+        return redirect()->route('history.index');
     }
 
     /**

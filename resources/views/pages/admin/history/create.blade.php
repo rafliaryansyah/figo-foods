@@ -7,15 +7,15 @@
       <div class="section-header">
         <div class="section-header-breadcrumb justify-content-start">
           <div class="breadcrumb-item"><a href="{{ url('/') }}">Dashboard</a></div>
-          <div class="breadcrumb-item"><a href="{{ route('welcome.index') }}">Welcome</a></div>
-          <div class="breadcrumb-item">Create Welcome Content</div>
+          <div class="breadcrumb-item"><a href="{{ route('history.index') }}">History</a></div>
+          <div class="breadcrumb-item">Create history content</div>
         </div>
       </div>
     <div class="section-body">
         <h2 class="section-title">Add Content</h2>
         <div class="col-12 col-md-6 col-lg-6">
             <div class="card">
-              <form method="POST" action="{{ route('welcome.store') }}" enctype="multipart/form-data">
+              <form method="POST" action="{{ route('history.store') }}" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
                   <div class="form-group">

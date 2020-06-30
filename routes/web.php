@@ -18,5 +18,5 @@ Route::get('/', 'HomeController@index');
 Route::get('/dashboard', 'DashboardController@index');
 Route::resource('welcome', 'WelcomeController');
 Route::resource('choose', 'ChooseController');
-Route::get('/history', 'HistoryController@index');
+Route::resource('history', 'HistoryController');
 Route::get('/news', 'NewsController@index');
