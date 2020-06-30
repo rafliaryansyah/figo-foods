@@ -72,7 +72,8 @@ class HistoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $history = History::findOrFail($id);
+        return view('pages.admin.history.edit', compact('history'));
     }
 
     /**
@@ -84,7 +85,22 @@ class HistoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+            'title' => 'required|max:128',
+            'description' => 'required|max:512'
+        ]);
+
+        DB::table('histories')->where('id', $id)->update([
+            'image' => $request->file('image')->store(
+                'assets/gallery', 'public'
+            ),
+            'title' => $request->title,
+            'description' => $request->description
+        ]);
+
+        return redirect()->route('history.index');
+
     }
 
     /**
