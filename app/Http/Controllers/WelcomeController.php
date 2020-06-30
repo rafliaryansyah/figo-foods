@@ -39,7 +39,6 @@ class WelcomeController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'image' => 'required',
             'title' => 'required|max:128',
             'description' => 'required|max:512'
         ]);
@@ -52,7 +51,7 @@ class WelcomeController extends Controller
                 'description' => $request->description
         ]);
 
-        redirect()->route('welcome.index');
+        return redirect()->route('welcome.index');
 
     }
 
@@ -75,7 +74,8 @@ class WelcomeController extends Controller
      */
     public function edit($id)
     {
-        //
+        $welcome = Welcome::findOrFail($id);
+        return view('pages.admin.welcome.edit', compact('welcome'));
     }
 
     /**
@@ -87,7 +87,21 @@ class WelcomeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'image' => 'required',
+            'title' => 'required|max:128',
+            'description' => 'required|max:512'
+        ]);
+
+        DB::table('welcomes')->where('id', $id)->update([
+                'image' => $request->file('image')->store(
+                    'assets/gallery', 'public'
+                ),
+                'title' => $request->title,
+                'description' => $request->description
+        ]);
+
+        return redirect()->route('welcome.index');
     }
 
     /**

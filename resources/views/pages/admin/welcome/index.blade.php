@@ -45,7 +45,7 @@
                           {{ $welcome->description }}
                         </td>
                         <td class="text-center">
-                          <button class="btn btn-primary">Edit</button>
+                          <a href="{{ route('welcome.edit', $welcome->id) }}" class="btn btn-primary">Edit</a>
                           <button class="btn btn-danger">Delete</button>
                         </td>
                       </tr>
