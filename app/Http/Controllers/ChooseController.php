@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Choose;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\DB;
@@ -15,7 +16,8 @@ class ChooseController extends Controller
      */
     public function index()
     {
-        return view('pages.admin.choose.index');
+        $chooses = Choose::all();
+        return view('pages.admin.choose.index', compact('chooses'));
     }
 
     /**

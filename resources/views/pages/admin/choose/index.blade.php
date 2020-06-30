@@ -32,24 +32,27 @@
                       </tr>
                     </thead>
                     <tbody>                                 
+                      @foreach ($chooses as $choose)
                       <tr>
                         <td>
                           1
                         </td>
                         <td>
-                            <img alt="image" src="assets/img/avatar/avatar-5.png" class="rounded-circle" width="35" data-toggle="tooltip" title="Wildan Ahdian">
+                            {{-- <img alt="image" src="assets/img/avatar/avatar-5.png" class="rounded-circle" width="35" data-toggle="tooltip" title="Wildan Ahdian"> --}}
+                            {{ $choose->image }}
                         </td>
                         <td class="align-middle">
-                          <p>Anda meme sekali</p>
+                          <p>{{ $choose->title }}</p>
                         </td>
                         <td>
-                            <p class="text">Lorem ipsum dolor sit amet. Asadsasda sass</p>
+                            <p class="text">{{ $choose->description }}</p>
                         </td>
                         <td class="text-center">
                           <button class="btn btn-primary">Detail</button>
                           <button class="btn btn-danger">Delete</button>
                         </td>
                       </tr>
+                      @endforeach
                     </tbody>
                   </table>
                 </div>
