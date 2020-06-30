@@ -5,7 +5,9 @@
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
   <title>@yield('title') &mdash; Figo</title>
 
+  @stack('prepend-script')
   @include('includes.admin.style')
+  @stack('addon-script')
 
 </head>
 
@@ -21,6 +23,10 @@
     </div>
   </div>
 
+  @include('includes.admin.footer')
+
+  @stack('prepend-script')
   @include('includes.admin.script')
+  @stack('addon-script')
 </body>
 </html>

@@ -13,6 +13,7 @@
 
       <div class="section-body">
         <h2 class="section-title">Welcome</h2>
+        <a class="btn btn-primary" href="{{ route('welcome.create') }}">Add Content</a>
         <div class="row">
           <div class="col-12">
             <div class="card">
@@ -57,6 +58,7 @@
           </div>
         </div>
       </div>
+      
     </section>
   </div>
 @endsection

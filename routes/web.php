@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'HomeController@index');
 
 Route::get('/dashboard', 'DashboardController@index');
-Route::get('/welcome', 'WelcomeController@index');
+Route::resource('welcome', 'WelcomeController');
 Route::get('/choose', 'ChooseController@index');
 Route::get('/history', 'HistoryController@index');
 Route::get('/news', 'NewsController@index');
