@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\News;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class NewsController extends Controller
 {
@@ -25,7 +26,7 @@ class NewsController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.admin.news.create');
     }
 
     /**
@@ -36,7 +37,22 @@ class NewsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+            'title' => 'required',
+            'description' => 'required'
+        ]);
+
+        DB::table('news')->insert([
+            'image' => $request->file('image')->store(
+                'assets/gallery', 'public'
+            ),
+            'title' => $request->title,
+            'description' => $request->description
+        ]);
+
+        return redirect()->route('news.index');
+
     }
 
     /**
