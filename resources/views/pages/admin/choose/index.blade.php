@@ -13,6 +13,7 @@
 
       <div class="section-body">
         <h2 class="section-title">Choose</h2>
+        <a class="btn btn-primary" href="{{ route('choose.create') }}">Add Choose Content</a>
         <div class="row">
           <div class="col-12">
             <div class="card">
@@ -24,7 +25,7 @@
                         <th>
                           #
                         </th>
-                        <th>Icon</th>
+                        <th>Image</th>
                         <th>Title</th>
                         <th>Description</th>
                         <th>Action</th>

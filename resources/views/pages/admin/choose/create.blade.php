@@ -7,8 +7,8 @@
       <div class="section-header">
         <div class="section-header-breadcrumb justify-content-start">
           <div class="breadcrumb-item"><a href="{{ url('/') }}">Dashboard</a></div>
-          <div class="breadcrumb-item"><a href="{{ route('welcome.index') }}">Welcome</a></div>
-          <div class="breadcrumb-item">Create Welcome Content</div>
+          <div class="breadcrumb-item"><a href="{{ route('choose.index') }}">Choose</a></div>
+          <div class="breadcrumb-item">Create choose content</div>
         </div>
       </div>
     <div class="section-body">
@@ -21,8 +21,8 @@
                   <div class="form-group">
                     <label>Image</label>
                     <div class="custom-file">
-                        <input type="file" class="custom-file-input @error('image') is-invalid @enderror" id="customFile" name="image">
-                        <label class="custom-file-label @error('image') @enderror" for="customFile">Choose file</label>
+                        <input type="file" class="custom-file-input @error('image') is-invalid @enderror" id="customFile" name="image" value="{{ old('image') }}">
+                        <label class="custom-file-label" for="customFile">Choose file</label>
                     </div>
                     @error('image')
                       <div class="invalid-feedback">
