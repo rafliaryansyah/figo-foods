@@ -16,7 +16,7 @@ class HistoryController extends Controller
     public function index()
     {
         $histories = History::all();
-        return view('pages.admin.history.index');
+        return view('pages.admin.history.index', compact('histories'));
     }
 
     /**

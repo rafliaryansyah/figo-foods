@@ -13,6 +13,7 @@
 
       <div class="section-body">
         <h2 class="section-title">History</h2>
+        <a class="btn btn-primary" href="{{ route('history.create') }}">Add Content</a>
         <div class="row">
           <div class="col-12">
             <div class="card">
@@ -31,24 +32,27 @@
                       </tr>
                     </thead>
                     <tbody>                                 
+                      @foreach ($histories as $history)
                       <tr>
                         <td>
-                          1
+                          {{ $loop->iteration }}
                         </td>
                         <td>
-                            <img alt="image" src="assets/img/avatar/avatar-5.png" class="rounded-circle" width="35" data-toggle="tooltip" title="Wildan Ahdian">
+                            {{-- <img alt="image" src="assets/img/avatar/avatar-5.png" class="rounded-circle" width="35" data-toggle="tooltip" title="Wildan Ahdian"> --}}
+                            {{ $history->image }}
                         </td>
                         <td class="align-middle">
-                          <p>Anda meme sekali</p>
+                          <p>{{ $history->title }}</p>
                         </td>
                         <td>
-                            <p class="text">Lorem ipsum dolor sit amet. Asadsasda sass</p>
+                            <p class="text">{{ $history->description }}</p>
                         </td>
                         <td class="text-center">
                           <button class="btn btn-primary">Detail</button>
                           <button class="btn btn-danger">Delete</button>
                         </td>
                       </tr>
+                      @endforeach
                     </tbody>
                   </table>
                 </div>
