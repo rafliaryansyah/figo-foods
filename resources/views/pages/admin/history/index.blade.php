@@ -49,7 +49,11 @@
                         </td>
                         <td class="text-center">
                           <a href="{{ route('history.edit', $history->id) }}" class="btn btn-primary">Edit</a>
-                          <button class="btn btn-danger">Delete</button>
+                          <form action="{{ route('history.destroy', $history->id) }}" method="POST">
+                          @csrf
+                          @method('DELETE')
+                            <button class="btn btn-danger" type="submit">Delete</button>
+                          </form>
                         </td>
                       </tr>
                       @endforeach

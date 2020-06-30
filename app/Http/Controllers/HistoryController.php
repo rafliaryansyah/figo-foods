@@ -111,6 +111,8 @@ class HistoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        DB::table('histories')->where('id', $id)->delete();
+
+        return redirect()->back();
     }
 }
