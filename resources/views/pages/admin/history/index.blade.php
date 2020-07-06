@@ -38,8 +38,8 @@
                           {{ $loop->iteration }}
                         </td>
                         <td>
-                            {{-- <img alt="image" src="assets/img/avatar/avatar-5.png" class="rounded-circle" width="35" data-toggle="tooltip" title="Wildan Ahdian"> --}}
-                            {{ $history->image }}
+                            <img alt="image" src="{{ Storage::url($history->image) }}" class="rounded-circle" width="35" data-toggle="tooltip" title="Wildan Ahdian">
+                            {{-- {{ $history->image }} --}}
                         </td>
                         <td class="align-middle">
                           <p>{{ $history->title }}</p>

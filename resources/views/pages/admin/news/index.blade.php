@@ -37,7 +37,9 @@
                         <td>
                           {{ $loop->iteration }}
                         </td>
-                        <td>{{ $new->image }}</td>
+                        <td>
+                          <img alt="image" src="{{ Storage::url($new->image) }}" class="rounded-circle" width="35" data-toggle="tooltip" title="Wildan Ahdian">
+                        </td>
                         <td class="align-middle">
                           {{ $new->title }}
                         </td>
